@@ -19,7 +19,13 @@ $(function() {
         }).done((data) => {
             // 通信が成功した時
             // dataには通信の結果が格納される
-            console.log(data);
+            let prefecture = data.results[0].address1
+            let city = data.results[0].address2
+            let address = data.results[0].address3
+            
+            $('#prefecture').text(prefecture);
+            $('#city').text(city);
+            $('#address').text(address);
 
         }).fail((error) => {
             // 通信が失敗した時
